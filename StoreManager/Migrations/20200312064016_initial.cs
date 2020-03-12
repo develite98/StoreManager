@@ -20,6 +20,7 @@ namespace StoreManager.Migrations
                     table.PrimaryKey("PK_Bills", x => x.ID);
                 });
 
+
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new

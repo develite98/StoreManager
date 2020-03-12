@@ -10,29 +10,13 @@ namespace StoreManager.Controllers
 {
     public class HomeController : Controller
     {
+        StoreDbContext db = new StoreDbContext();
         public IActionResult Index()
         {
-            return View();
+            List<Users> users = db.Users.ToList();
+            return View(users);
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
